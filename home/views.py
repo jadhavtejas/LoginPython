@@ -1,6 +1,7 @@
 from email import message
 from django.shortcuts import render
 from .models import *
+from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -57,3 +58,6 @@ def LoginUser(request):
         else:
             message = "User Does Not Exist"
             return render(request,'home/register.html',{'msg':message})
+
+def student(request):
+    return redirect('https://studentlearningbca.github.io/T/index.html')
