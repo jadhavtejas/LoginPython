@@ -61,3 +61,21 @@ def LoginUser(request):
 
 def student(request):
     return redirect('https://studentlearningbca.github.io/T/index.html')
+
+def buy(request):
+    return render(request,'home/buy.html')
+
+def contact(request):       
+    if request.method == "POST":
+        username = request.POST.get('username')
+        email = request.POST.get('email')               
+        query = request.POST.get('query')               
+        Visitlll = Contact(username=username, email=email,query=query)                         
+        Visitlll.save()
+
+
+    # data = {
+    #     "title": "Home Page",
+    #     "description": "BAAP AGRO!!!"
+    # }3
+    return render(request,'home/contact.html')

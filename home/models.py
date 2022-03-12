@@ -8,3 +8,8 @@ class User(models.Model):
     Email = models.EmailField(max_length=50)
     Contact = models.CharField(max_length=50)
     Password = models.CharField(max_length=50)
+
+class Contact(models.Model):
+    Username = models.CharField(max_length=100)
+    Email = models.CharField(max_length=100)
+    Query = models.CharField(max_length=100)
